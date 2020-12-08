@@ -1,7 +1,7 @@
 import React from "react";
 
-const ListItem = () => {
-  return <li>タスク</li>;
+const ListItem = (props) => {
+  return <li>{props.task.title}</li>;
 };
 
 class List extends React.Component {
@@ -33,7 +33,7 @@ class List extends React.Component {
     return (
       <ul>
         {this.state.tasks.map((task) => {
-          return <ListItem>{task.name}</ListItem>;
+          return <ListItem task={task} />;
         })}
       </ul>
     );
